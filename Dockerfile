@@ -1,6 +1,6 @@
-FROM davidkarlsen/docker-java:8u45
+FROM davidkarlsen/docker-java:8u51
 
-MAINTAINER David J. M. Karlsen <david.karlsen@evry.com>
+MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 
 #install heroku toolbelt to get foreman:
 RUN wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
