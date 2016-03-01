@@ -1,4 +1,4 @@
-FROM davidkarlsen/docker-java:8u72
+FROM davidkarlsen/docker-java:8u74
 
 MAINTAINER David J. M. Karlsen <david@davidkarlsen.com>
 
