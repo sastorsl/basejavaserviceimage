@@ -18,7 +18,7 @@ if [ -n "$GOSU_USER" ] && [ "$GOSU_USER" != "0:0" ]; then
   groupadd -g "${uidgid[1]}" app || true
   useradd -u "${uidgid[0]}" -g app -m -d /app -s /bin/bash app || true
   chown -R app:app /app
-  exec gosu $GOSU_USER "$@"
+  #exec gosu $GOSU_USER "$@"
 fi
 
 # If GOSU_USER was 0:0 exec command passed in args without gosu (assume already root)
