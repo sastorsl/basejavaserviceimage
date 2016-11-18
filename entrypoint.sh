@@ -15,10 +15,11 @@ fi
 # become user:group set within and exec command passed in args
 if [ -n "$GOSU_USER" ] && [ "$GOSU_USER" != "0:0" ]; then
   IFS=':' read -r -a uidgid <<< $GOSU_USER
-  usermod -u "${uidgid[0]}" -g "${uidgid[1]}"
-  chown -R app:app /app
+  usermod -u "${uidgid[0]}" -g "${uidgid[1]}" app
   #exec gosu $GOSU_USER "$@"
 fi
+
+chown -R app:app /app
 
 # If GOSU_USER was 0:0 exec command passed in args without gosu (assume already root)
 exec "$@"
