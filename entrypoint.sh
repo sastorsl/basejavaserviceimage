@@ -15,8 +15,7 @@ fi
 # become user:group set within and exec command passed in args
 if [ -n "$GOSU_USER" ] && [ "$GOSU_USER" != "0:0" ]; then
   IFS=':' read -r -a uidgid <<< $GOSU_USER
-  groupadd -g "${uidgid[1]}" app || true
-  useradd -u "${uidgid[0]}" -g app -m -d /app -s /bin/bash app || true
+  usermod -u "${uidgid[0]}" -g "${uidgid[1]}"
   chown -R app:app /app
   #exec gosu $GOSU_USER "$@"
 fi
