@@ -15,7 +15,9 @@ fi
 # become user:group set within and exec command passed in args
 if [ -n "$GOSU_USER" ] && [ "$GOSU_USER" != "0:0" ]; then
   IFS=':' read -r -a uidgid <<< $GOSU_USER
+  groupmod -o -g "${uidgid[1]}" app || true
   usermod -u "${uidgid[0]}" -g "${uidgid[1]}" app
+  #not needed since we run herokuish instead:
   #exec gosu $GOSU_USER "$@"
 fi
 
