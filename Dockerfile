@@ -1,4 +1,4 @@
-FROM davidkarlsen/docker-java:8u131-1
+FROM davidkarlsen/docker-java:8u131-2
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG HEROKUISH_VERSION=0.3.31
 ARG ENVCONSUL_VERSION=0.6.2
