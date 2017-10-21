@@ -1,7 +1,12 @@
 FROM davidkarlsen/docker-java:8u151
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
+<<<<<<< HEAD
 ARG HEROKUISH_VERSION=0.3.31
 ARG ENVCONSUL_VERSION=0.7.1
+=======
+ARG HEROKUISH_VERSION=0.3.32
+ARG ENVCONSUL_VERSION=0.7.0
+>>>>>>> upgrade herokuish
 RUN apt update && \
     apt -y install curl daemontools git gosu vim net-tools nmap netcat iputils-ping && \
     apt clean && \
