@@ -11,4 +11,4 @@ RUN apt update && \
     useradd -c "application user" -d /app -s /bin/bash -m app && \
     find /var/cache/ -type f -delete
 COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
