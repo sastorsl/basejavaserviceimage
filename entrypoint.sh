@@ -21,7 +21,9 @@ if [ -n "$GOSU_USER" ] && [ "$GOSU_USER" != "0:0" ]; then
   #exec gosu $GOSU_USER "$@"
 fi
 
-chown -R app:app /app
+if (( `id -u` == 0 )); then 
+  chown -R app:app /app
+fi
 
 # If GOSU_USER was 0:0 exec command passed in args without gosu (assume already root)
 exec "$@"
