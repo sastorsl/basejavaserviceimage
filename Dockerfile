@@ -1,4 +1,4 @@
-FROM davidkarlsen/docker-java:8u161
+FROM davidkarlsen/docker-java:8u171
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
 ARG OVERMIND_VERSION=v1.1.1
 ENV OVERMIND_SOCKET=/tmp/.overmind.sock
