@@ -1,6 +1,6 @@
 FROM davidkarlsen/docker-java:8u181
 LABEL maintainer "David J. M. Karlsen <david@davidkarlsen.com>"
-ARG OVERMIND_VERSION=v1.2
+ARG OVERMIND_VERSION=v1.2.1
 ENV OVERMIND_SOCKET=/tmp/.overmind.sock
 RUN apt update && \
     apt -y install curl daemontools git gosu vim net-tools nmap netcat iputils-ping tmux unzip gzip && \
